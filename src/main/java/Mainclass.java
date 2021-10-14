@@ -1,8 +1,10 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Mainclass {
     public static void main(String[] args) {
+        Random rand=new Random();
         Student tom = new Student("Tom", "Johnson", "tom1@gmail.com", "IT2021");
         Student anna = new Student("Anna", "Bell", "anna1@gmail.com", "IT2021");
         Student layla = new Student("Layla", "Smith", "layla@gmail.com", "IT2021");
