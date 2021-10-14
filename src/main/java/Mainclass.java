@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.LinkedList;
+
 
 public class Mainclass {
     public static void main(String[] args) {
