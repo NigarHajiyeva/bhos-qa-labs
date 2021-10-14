@@ -38,7 +38,7 @@ public class ClassroomTest {
     @DisplayName("Test for studentCount() method")
     @Test
     void studentCount() {
-        Assertions.assertEquals(4, it2021.studentCount());
+        Assertions.assertEquals(3, it2021.studentCount());
     }
 
 }
