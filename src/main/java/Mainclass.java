@@ -16,13 +16,20 @@ public class Mainclass {
         it2021.addStudent(tom);
         it2021.addStudent(layla);
         it2021.addStudent(david);
+        
+        List<Student> studentToRemove = new LinkedList<>();
+        for(Student student : students){
+            if(student.getName() == "Tom"){
+                studentToRemove.add(student);
+            }
+        }
+        for(Student student : studentToRemove){
+            students.remove(student);
+        }
 
         System.out.println("The all members of class:" + it2021.toString());
 
         System.out.println("The count of students:" + it2021.studentCount());
-
-        it2021.deleteStudent(anna);
-        System.out.println("The count of students after deleting Anna:" + it2021.studentCount());
 
 
 
