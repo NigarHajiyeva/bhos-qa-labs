@@ -18,8 +18,10 @@ dependencies {
     implementation 'net.thauvin.erik.httpstatus:httpstatus:1.0.5'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'junit:junit:4.13.1'
     implementation 'org.json:json:20180813'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
 
 }
 
