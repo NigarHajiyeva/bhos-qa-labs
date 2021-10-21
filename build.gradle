@@ -15,10 +15,11 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'junit:junit:4.12'
-    implementation 'junit:junit:4.12'
-    implementation 'junit:junit:4.12'
+    implementation 'net.thauvin.erik.httpstatus:httpstatus:1.0.5'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'junit:junit:4.13.1'
+    implementation 'org.json:json:20180813'
 
 }
 
