@@ -29,6 +29,7 @@ public class Springproj1ApplicationTests {
         assertEquals( MediaType.APPLICATION_JSON, response.getHeaders().getContentType());
     }
 
+    
     @Test
     @DisplayName("Integration test of 'https://60a21d3f745cd70017576092.mockapi.io/api/v1/repos/1/branches' link")
     public void secondURLTest() throws Exception {
