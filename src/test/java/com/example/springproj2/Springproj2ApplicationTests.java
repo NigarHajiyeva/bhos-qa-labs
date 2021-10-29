@@ -21,6 +21,7 @@ import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
+
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
@@ -71,7 +72,8 @@ public class Springproj2ApplicationTests {
             map.put(o.getString("id"), o.getString("name"));
 
         }
-        assertTrue(map.containsKey(1) != map.containsKey(2));
+        //System.out.println(map.get("1"));
+        assertTrue(map.get("1") != map.get("2"));
 
     }
 
