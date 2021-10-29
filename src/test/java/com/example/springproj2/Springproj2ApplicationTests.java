@@ -9,6 +9,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.*;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.net.URL;
+import java.security.cert.*;
+import java.util.*;
 import java.util.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
