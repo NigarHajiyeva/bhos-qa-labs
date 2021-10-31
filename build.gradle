@@ -2,17 +2,7 @@ plugins {
     id 'org.springframework.boot' version '2.5.5'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
-    id "org.sonarqube" version "3.3"
 }
-
-sonarqube {
-  properties {
-    property "sonar.projectKey", "NigarHajiyeva_bhos-qa-labs"
-    property "sonar.organization", "nigarhajiyeva"
-    property "sonar.host.url", "https://sonarcloud.io"
-  }
-}
-
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
@@ -25,7 +15,10 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'net.thauvin.erik.httpstatus:httpstatus:1.0.5'
+    implementation 'org.json:json:20210307'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'com.google.firebase:firebase-admin:8.1.0'
+
 }
 
 test {

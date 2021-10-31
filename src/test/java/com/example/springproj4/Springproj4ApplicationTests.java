@@ -1,4 +1,5 @@
 package com.example.springproj4;
+import org.json.JSONException;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -14,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class Springproj4ApplicationTests {
 
     @Test
-    public void check_title() {
+    public void check_title() throws JSONException {
         String link = "https://api.nytimes.com/svc/books/v3/lists.json?list=Combined Print and E-Book Nonfiction&api-key=GRApLbPdvoGHc7QpCTGSAVSMURWA1mY8";
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
@@ -33,7 +34,7 @@ class Springproj4ApplicationTests {
     }
 
     @Test
-    public void check_rank() {
+    public void check_rank() throws JSONException {
         String link = "https://api.nytimes.com/svc/books/v3/lists.json?list=Combined Print and E-Book Nonfiction&api-key=GRApLbPdvoGHc7QpCTGSAVSMURWA1mY8";
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
