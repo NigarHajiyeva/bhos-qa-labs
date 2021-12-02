@@ -23,15 +23,15 @@ public class FirebaseTest {
         String fileReference = uploadImage(idToken, userId);
 
         // Set avatar property in user document
-        setAvatar(idToken, fileReference, userId);
+        setCat(idToken, fileReference, userId);
 
         // Get image reference from avatar property
         String userDetailsResult = getUserDetails(userId, idToken);
-        String avatarReference = new JSONObject(userDetailsResult).getJSONObject("fields").getJSONObject("avatar").getString("stringValue");
-        String avatarReferenceUrlEncoded = URLEncoder.encode(avatarReference, StandardCharsets.UTF_8.toString());
+        String catReference = new JSONObject(userDetailsResult).getJSONObject("fields").getJSONObject("cat").getString("stringValue");
+        String catReferenceUrlEncoded = URLEncoder.encode(catReferenceReference, StandardCharsets.UTF_8.toString());
 
         // Check if file with this reference exists in storage
-        String url = String.format("%s/%s?alt=media&token=%s", ApiUrlConstants.FIREBASE_STORAGE_AVATAR, avatarReferenceUrlEncoded, System.getenv("AVATAR_TOKEN"));
+        String url = String.format("%s/%s?alt=media&token=%s", ApiUrlConstants.FIREBASE_STORAGE_AVATAR, avatarReferenceUrlEncoded, System.getenv("CAT_TOKEN"));
         assertEquals(200, HTTPUtil.check(url, idToken));
     }
 
@@ -40,21 +40,21 @@ public class FirebaseTest {
         return HTTPUtil.get(url, idToken);
     }
 
-    public void setAvatar(String idToken, String fileReference, String userId) throws IOException, InterruptedException {
-        String url = String.format("%s/%s?updateMask.fieldPaths=avatar", ApiUrlConstants.FIRESTORE_DOCUMENT, userId);
+    public void setCat(String idToken, String fileReference, String userId) throws IOException, InterruptedException {
+        String url = String.format("%s/%s?updateMask.fieldPaths=cat", ApiUrlConstants.FIRESTORE_DOCUMENT, userId);
         JSONObject data = new JSONObject();
         JSONObject fieldsObject = new JSONObject();
-        JSONObject avatarObject = new JSONObject();
-        avatarObject.put("stringValue", fileReference);
-        fieldsObject.put("avatar", avatarObject);
+        JSONObject catObject = new JSONObject();
+        catObject.put("stringValue", fileReference);
+        fieldsObject.put("cat", catObject);
         data.put("fields", fieldsObject);
 
         HTTPUtil.patch(url, idToken, data.toString());
     }
 
     public String uploadImage(String idToken, String userId) throws IOException, InterruptedException {
-        String url = String.format("%s/%s%%2F%s?alt=media&token=%s", ApiUrlConstants.FIREBASE_STORAGE_AVATAR, userId, "avatar.jpg", System.getenv("AVATAR_TOKEN"));
-        String response = HTTPUtil.uploadFile(url, idToken, "avatar.jpg");
+        String url = String.format("%s/%s%%2F%s?alt=media&token=%s", ApiUrlConstants.FIREBASE_STORAGE_AVATAR, userId, "cat.jpg", System.getenv("CAT_TOKEN"));
+        String response = HTTPUtil.uploadFile(url, idToken, "cat.jpg");
         return new JSONObject(response).getString("name");
     }
 
