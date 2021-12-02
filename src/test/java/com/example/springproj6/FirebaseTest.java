@@ -28,10 +28,10 @@ public class FirebaseTest {
         // Get image reference from avatar property
         String userDetailsResult = getUserDetails(userId, idToken);
         String catReference = new JSONObject(userDetailsResult).getJSONObject("fields").getJSONObject("cat").getString("stringValue");
-        String catReferenceUrlEncoded = URLEncoder.encode(catReferenceReference, StandardCharsets.UTF_8.toString());
+        String catReferenceUrlEncoded = URLEncoder.encode(catReference, StandardCharsets.UTF_8.toString());
 
         // Check if file with this reference exists in storage
-        String url = String.format("%s/%s?alt=media&token=%s", ApiUrlConstants.FIREBASE_STORAGE_AVATAR, avatarReferenceUrlEncoded, System.getenv("CAT_TOKEN"));
+        String url = String.format("%s/%s?alt=media&token=%s", ApiUrlConstants.FIREBASE_STORAGE_CAT, catReferenceUrlEncoded, System.getenv("CAT_TOKEN"));
         assertEquals(200, HTTPUtil.check(url, idToken));
     }
 
