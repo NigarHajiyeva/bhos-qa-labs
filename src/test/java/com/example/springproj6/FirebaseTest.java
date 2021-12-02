@@ -53,7 +53,7 @@ public class FirebaseTest {
     }
 
     public String uploadImage(String idToken, String userId) throws IOException, InterruptedException {
-        String url = String.format("%s/%s%%2F%s?alt=media&token=%s", ApiUrlConstants.FIREBASE_STORAGE_AVATAR, userId, "cat.jpg", System.getenv("CAT_TOKEN"));
+        String url = String.format("%s/%s%%2F%s?alt=media&token=%s", ApiUrlConstants.FIREBASE_STORAGE_CAT, userId, "cat.jpg", System.getenv("CAT_TOKEN"));
         String response = HTTPUtil.uploadFile(url, idToken, "cat.jpg");
         return new JSONObject(response).getString("name");
     }
